@@ -5,14 +5,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const holoLines = document.getElementById('holo-lines');
 
     function createHoloLines() {
+        const holoLinesContainer = document.getElementById('holo-lines');
         for (let i = 0; i < 5; i++) {
             const line = document.createElement('div');
             line.className = 'holo-line';
-            line.style.top = `${Math.random() * 100}%`;
-            line.style.animationDelay = `${Math.random() * 5}s`;
-            holoLines.appendChild(line);
+            line.style.left = `${Math.random() * 100}%`; // Position aléatoire
+            line.style.animationDelay = `${Math.random() * 5}s`; // Délai d'animation aléatoire
+            holoLinesContainer.appendChild(line);
         }
     }
+    
 
     function updateHoloEffect(event) {
         const rect = logo.getBoundingClientRect();
