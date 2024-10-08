@@ -1,0 +1,67 @@
+body {
+    margin: 0;
+    background-color: #111;
+}
+
+#logo-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+}
+
+#logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: 2;
+    mask-image: url('BNOW.png');
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    transition: transform 0.3s ease;
+}
+
+#sparkle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0) 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.holo-line {
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255, 0, 0, 1), rgba(0, 255, 0, 1), rgba(0, 0, 255, 1));
+    animation: shine 1.5s infinite;
+}
+
+@keyframes shine {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+#holo-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
