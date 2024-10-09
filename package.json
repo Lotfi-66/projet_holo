@@ -1,13 +1,11 @@
 {
-  "name": "projet_holo",
-  "version": "1.0.0",
-  "main": "vite.config.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "vite"      
+  "devDependencies": {
+    "vite": "^5.4.8"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": ""
+  "scripts": {
+    "dev": "vite"
+  },
+  "dependencies": {
+    "three": "^0.169.0"
+  }
 }
