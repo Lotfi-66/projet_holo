@@ -1,4 +1,91 @@
 body {
-    margin: 0;
-    overflow: hidden;
+  margin: 0;
+  padding: 0;
+  background-color: #111111;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+nav {
+  background-color: #222222;
+  padding: 5px 0;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+nav span {
+  margin: 0 15px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#app {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px; /* Espace entre les logos */
+  justify-content: center;
+  align-content: start;
+  height: 100vh;
+  padding: 40px 10px 10px;
+  box-sizing: border-box;
+}
+
+.logo-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1px; /* Très peu d'espace entre le logo et le nom */
+}
+
+.logo-item canvas {
+  width: 100% !important;
+  height: auto !important;
+  max-height: calc((100vh - 100px) / 1); /* Taille maximale pour les logos */
+  object-fit: contain;
+}
+
+.logo-name {
+  margin-top: -5px; /* Réduire l'espace entre le logo et le nom */
+  font-size: 18px;   /* Augmenter la taille du texte */
+  color: #ffffff;
+  text-align: center;
+}
+
+@media (max-height: 600px) {
+  nav {
+    padding: 3px 0;
   }
+
+  #app {
+    padding-top: 30px;
+  }
+  
+  .logo-item canvas {
+    max-height: calc((100vh - 50px) / 1.5); /* Adapter aux écrans plus petits */
+  }
+
+  .logo-name {
+    font-size: 16px;
+    margin-top: -5px;
+  }
+}
+
+@media (max-width: 600px) {
+  #app {
+    grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur petits écrans */
+    padding-top: 35px;
+  }
+
+  nav span {
+    font-size: 14px;
+    margin: 0 10px;
+  }
+
+  .logo-item canvas {
+    max-height: calc((100vh - 50px) / 2); /* Plus de place pour les logos */
+  }
+}
